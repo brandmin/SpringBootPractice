@@ -1,5 +1,7 @@
 package com.example.firstProject.controller.dto;
 
+import com.example.firstProject.entity.Article;
+
 public class ArticleForm {
     private String title;
     private String content;
@@ -31,5 +33,9 @@ public class ArticleForm {
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 '}';
+    }
+
+    public Article toEntity() {
+        return new Article(null, title, content); // 생성자에 맞게 값을 작성
     }
 }
