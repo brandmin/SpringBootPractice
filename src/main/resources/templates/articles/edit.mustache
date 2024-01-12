@@ -1,0 +1,17 @@
+{{>layouts/header}}
+{{#article}} <!-- 사용자 범위 지정하는 머스터치 문법태그 -->
+<form class="container" action="/articles/update", method="post">
+    <input type="hidden" name="id" value="{{id}}"> <!-- id를 보이지 않게 추가를 해주어야 어디서 수정하는지 알 수 있음 -->
+    <div class="mb-3">
+        <label class="form-label">제목</label>
+        <input type="text" name="title" class="form-control" value="{{title}}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">내용</label>
+        <textarea class="form-control" rows="3" name="content">{{content}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a href="/articles/{{id}}">back</a>
+</form>
+{{/article}}
+{{>layouts/footer}}
